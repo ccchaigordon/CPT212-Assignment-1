@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 import src.main.Q1_RadixSort;
 
-public class TestCases {
+public class Q1_TestCases {
     private static void check(int[] original, int caseNo) {
         int[] expected = original.clone();
         Arrays.sort(expected);
