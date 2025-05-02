@@ -10,7 +10,7 @@ public class Q2_TestCases {
         Arrays.sort(expected); // Java's reference sort
 
         String[] actual = original.clone();
-        Q2_RadixSort.radixSort(actual); // your sort
+        Q2_RadixSort.radixSort(actual);
 
         assert Arrays.equals(expected, actual) : "\n❌  Case #" + caseNo +
                 " failed\n   expected " + Arrays.toString(expected) +
