@@ -1,3 +1,5 @@
+package src.main;
+
 import java.util.Arrays;
 
 public class Q1_RadixSort {
@@ -5,6 +7,10 @@ public class Q1_RadixSort {
     // Get largest value to get the max digit count
 
     public static int getMax(int[] values) {
+
+        if (values == null || values.length == 0)
+            return 0;
+
         int max = values[0];
         for (int val : values)
             if (val > max)

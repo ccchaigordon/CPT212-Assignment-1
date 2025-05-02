@@ -1,3 +1,5 @@
+package src.main;
+
 import java.util.Arrays;
 
 public class Q2_RadixSort {
@@ -5,6 +7,10 @@ public class Q2_RadixSort {
     // Get largest length of word in the list
 
     public static int getMaxLength(String[] arr) {
+
+        if (arr == null || arr.length == 0)
+            return 0;
+
         int maxLength = 0;
         for (String str : arr) {
             if (str.length() > maxLength) {
