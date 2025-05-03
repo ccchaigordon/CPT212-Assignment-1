@@ -20,10 +20,13 @@ public class Q1_RadixSort {
         int max = values[0]; 
         count+=2; //1 array indexing, 1 assignment
         
-        count++; //assignment
-        for (int val : values)
+        count++; //assignment (i=0)
+        for (int i = 0; i < values.length; i++)
         {
-            count+=3; //1 comparison, 1 array indexing, 1 assignment
+            count+=2; //1 length access, 1 comparison
+
+            int val = values[i];
+            count+=2; //1 array indexing, 1 assignment
 
             count++; //comparison
             if (val > max)
@@ -33,7 +36,7 @@ public class Q1_RadixSort {
             }
             count+=2; //1 arithmetic, 1 assignment
         }
-        count++; //1 comparison (i < values.length == false)
+        count+=2; //1 length access, 1 comparison (i < values.length == false)
         count++; //return
         return max;
     }
@@ -79,7 +82,7 @@ public class Q1_RadixSort {
 
                 count+=2; //1 arithmetic, 1 assignment
             }
-            count+=2; //comparison  (j < sourceSize[i]) == false)
+            count+=2; //1 length access, 1 comparison  (j < sourceSize[i]) == false)
 
             count+=2; //1 arithmetic, 1 assignment
         }
@@ -100,9 +103,14 @@ public class Q1_RadixSort {
         count++; //assignment
         int placeValue = 1; // 1 = 1st digit, 2 = 2nd digit, etc.
         
-        count++; //assignment
-        for (int key : list) {
-            count+=3; //1 comparison, 1 array indexing, 1 assignment
+        count++; //assignment (i = 0)
+        for (int i = 0; i < list.length; i++)
+        {
+            count+=2; //1 length access, 1 comparison
+
+            int key = list[i]; 
+            count+=2; //1 array indexing, 1 assignment
+
             int row = (key / placeValue) % 10;
             count+=3; //2 arithmetic operations, 1 assignment
             firstBuckets[row][firstBucketSize[row]++] = key;
@@ -110,7 +118,7 @@ public class Q1_RadixSort {
 
             count+=2; //1 arithmetic, 1 assignment
         }
-        count+=2; //comparison (key < list.length == false)
+        count+=2; //1 length access, 1 comparison (key < list.length == false)
         printPass(1, firstBuckets, firstBucketSize);
         placeValue *= 10;
         count+=2; //1 arithmetic, 1 assignment
@@ -166,7 +174,7 @@ public class Q1_RadixSort {
                 count+=6; //1 increment, 3 array indexing, 2 assignment
                 count+=2; //1 arithmetic, 1 assignment
             }
-            count+=2; //comparison (j < finalBucketSize[i]) == false)
+            count+=2; //1 length access, 1 comparison (j < finalBucketSize[i]) == false)
         count+=2; //1 arithmetic, 1 assignment
         }
         count++; //comparison (i < 10 == false)
@@ -179,7 +187,6 @@ public class Q1_RadixSort {
         count++; //method call
         radixSort(data);
         System.out.println("\nSorted: " + Arrays.toString(data));
-
         System.out.println("\nNumber of primitive operations: " + count);
     }
 }
