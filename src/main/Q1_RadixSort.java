@@ -12,7 +12,7 @@ public class Q1_RadixSort {
 
         if (values == null || values.length == 0)
         {
-            count+=2; //2 comparisons
+            count+=3; //2 comparisons, 1 length access
             count++; //return
             return 0;
         }
@@ -75,11 +75,11 @@ public class Q1_RadixSort {
                 count+=3; //2 arithmetic operations, 1 assignment
 
                 destination[destinationRow][destinationSize[destinationRow]++] = value;
-                count+=5; //1 increment, 2 array indexing, 2 assignment
+                count+=6; //1 increment, 3 array indexing, 2 assignment
 
                 count+=2; //1 arithmetic, 1 assignment
             }
-            count++; //comparison  (j < sourceSize[i]) == false)
+            count+=2; //comparison  (j < sourceSize[i]) == false)
 
             count+=2; //1 arithmetic, 1 assignment
         }
@@ -110,7 +110,7 @@ public class Q1_RadixSort {
 
             count+=2; //1 arithmetic, 1 assignment
         }
-        count++; //comparison (key < list.length == false)
+        count+=2; //comparison (key < list.length == false)
         printPass(1, firstBuckets, firstBucketSize);
         placeValue *= 10;
         count+=2; //1 arithmetic, 1 assignment
@@ -166,7 +166,7 @@ public class Q1_RadixSort {
                 count+=6; //1 increment, 3 array indexing, 2 assignment
                 count+=2; //1 arithmetic, 1 assignment
             }
-            count++; //comparison (j < finalBucketSize[i]) == false)
+            count+=2; //comparison (j < finalBucketSize[i]) == false)
         count+=2; //1 arithmetic, 1 assignment
         }
         count++; //comparison (i < 10 == false)
