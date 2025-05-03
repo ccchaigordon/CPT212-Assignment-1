@@ -12,8 +12,6 @@ public class Q2_RadixSort {
 
         if (arr == null || arr.length == 0)
         {
-            count+=3; //2 comparisons, 1 length access
-            count++; //return
             return 0;
         }
 
