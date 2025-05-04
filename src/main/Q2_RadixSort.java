@@ -29,7 +29,7 @@ public class Q2_RadixSort {
                 count += 2; // 1 length access, 1 assignment
                 maxLength = str.length();
             }
-            count += 2; // 1 arithmetic, 1 assignment
+            count += 2; // 1 arithmetic, 1 assignment (i++)
         }
         count += 2; // 1 length access, 1 comparison (i < arr.length == false)
         count++; // Return
@@ -87,11 +87,11 @@ public class Q2_RadixSort {
                     destination[0][destinationSize[0]++] = word; // Place shorter words in the first bucket
                     count += 6; // 1 increment, 3 array indexing, 2 assignment
                 }
-                count += 2; // 1 arithmetic, 1 assignment
+                count += 2; // 1 arithmetic, 1 assignment (j++)
             }
             count += 2; // 1 array indexing, 1 comparison (j < sourceSize[i] == false)
 
-            count += 2; // 1 arithmetic, 1 assignment
+            count += 2; // 1 arithmetic, 1 assignment (i++)
         }
         count++; // Comparison (i < 26 == false)
     }
@@ -137,7 +137,7 @@ public class Q2_RadixSort {
                 firstBuckets[0][firstBucketSize[0]++] = word; // Place shorter words in the first bucket
                 count += 6; // 1 increment, 3 array indexing, 2 assignment
             }
-            count += 2; // 1 arithmetic, 1 assignment
+            count += 2; // 1 arithmetic, 1 assignment (i++)
         }
         count += 2; // 1 length access, 1 comparison (i < list.length == false)
 
@@ -167,7 +167,7 @@ public class Q2_RadixSort {
                 count++; // 1 method call
                 printPass(passNum, firstBuckets, firstBucketSize);
             }
-            count += 4; // 2 arithmetic operations, 2 assignment
+            count += 4; // 2 arithmetic operations, 2 assignment (passNum++, placeValue--)
         }
         count++; // Comparison (placeValue >= 0 == false)
 
@@ -191,10 +191,10 @@ public class Q2_RadixSort {
                 count += 2; // 1 array indexing, 1 comparison
                 list[outputIndex++] = finalBuckets[i][j];
                 count += 6; // 1 increment, 3 array indexing, 2 assignment
-                count += 2; // 1 arithmetic, 1 assignment
+                count += 2; // 1 arithmetic, 1 assignment (j++)
             }
             count += 2; // 1 array indexing, 1 comparison (j < finalBucketSize[i] == false)
-            count += 2; // 1 arithmetic, 1 assignment
+            count += 2; // 1 arithmetic, 1 assignment (i++)
         }
         count++; // Comparison (i < 26 == false)
     }
