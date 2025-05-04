@@ -29,7 +29,7 @@ public class Q1_RadixSort {
                 count++; // 1 assignment
                 max = val;
             }
-            count += 2; // 1 arithmetic, 1 assignment
+            count += 2; // 1 arithmetic, 1 assignment (i++)
         }
         count += 2; // 1 length access, 1 comparison (i < values.length == false)
         count++; // Return
@@ -74,11 +74,11 @@ public class Q1_RadixSort {
                 destination[destinationRow][destinationSize[destinationRow]++] = value;
                 count += 6; // 1 increment, 3 array indexing, 2 assignment
 
-                count += 2; // 1 arithmetic, 1 assignment
+                count += 2; // 1 arithmetic, 1 assignment (j++)
             }
             count += 2; // 1 array indexing, 1 comparison (j < sourceSize[i]) == false)
-
-            count += 2; // 1 arithmetic, 1 assignment
+ 
+            count += 2; // 1 arithmetic, 1 assignment (i++)
         }
         count++; // Comparison (i < 10 == false)
     }
@@ -109,7 +109,7 @@ public class Q1_RadixSort {
             firstBuckets[row][firstBucketSize[row]++] = key;
             count += 6; // 1 increment, 3 array indexing, 2 assignment
 
-            count += 2; // 1 arithmetic, 1 assignment
+            count += 2; // 1 arithmetic, 1 assignment (i++)
         }
         count += 2; // 1 length access, 1 comparison (key < list.length == false)
         printPass(1, firstBuckets, firstBucketSize);
@@ -139,7 +139,7 @@ public class Q1_RadixSort {
                 count++; // 1 method call
                 printPass(pass, firstBuckets, firstBucketSize);
             }
-            count += 4; // 2 arithmetic operations, 2 assignment
+            count += 4; // 2 arithmetic operations, 2 assignment (pass++, placeValue *= 10)
         }
 
         count++; // Comparison (pass <= maxDigits == false)
@@ -164,10 +164,10 @@ public class Q1_RadixSort {
                 count += 2; // 1 array indexing, 1 comparison (inner loop)
                 list[outputIndex++] = finalBuckets[i][j];
                 count += 6; // 1 increment, 3 array indexing, 2 assignment
-                count += 2; // 1 arithmetic, 1 assignment
+                count += 2; // 1 arithmetic, 1 assignment (j++)
             }
             count += 2; // 1 array indexing, 1 comparison (j < finalBucketSize[i]) == false)
-            count += 2; // 1 arithmetic, 1 assignment
+            count += 2; // 1 arithmetic, 1 assignment (i++)
         }
         count++; // Comparison (i < 10 == false)
     }
