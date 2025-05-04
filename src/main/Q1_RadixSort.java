@@ -80,7 +80,7 @@ public class Q1_RadixSort {
 
                 count+=2; //1 arithmetic, 1 assignment
             }
-            count+=2; //1 length access, 1 comparison  (j < sourceSize[i]) == false)
+            count+=2; //1 array indexing, 1 comparison  (j < sourceSize[i]) == false)
 
             count+=2; //1 arithmetic, 1 assignment
         }
@@ -172,7 +172,7 @@ public class Q1_RadixSort {
                 count+=6; //1 increment, 3 array indexing, 2 assignment
                 count+=2; //1 arithmetic, 1 assignment
             }
-            count+=2; //1 length access, 1 comparison (j < finalBucketSize[i]) == false)
+            count+=2; //1 array indexing, 1 comparison (j < finalBucketSize[i]) == false)
         count+=2; //1 arithmetic, 1 assignment
         }
         count++; //comparison (i < 10 == false)

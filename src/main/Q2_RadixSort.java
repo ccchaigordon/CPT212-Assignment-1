@@ -29,7 +29,7 @@ public class Q2_RadixSort {
             count+=2; //1 length access, 1 comparison
             if (str.length() > maxLength) 
             {
-                count++; //1 assignment
+                count+=2; //1 length access, 1 assignment
                 maxLength = str.length();
             }
             count+=2; //1 arithmetic, 1 assignment
@@ -96,7 +96,7 @@ public class Q2_RadixSort {
                 }
                 count+=2; //1 arithmetic, 1 assignment
             }
-            count+=2; //1 length access, 1 comparison (j < sourceSize[i] == false)
+            count+=2; //1 array indexing, 1 comparison (j < sourceSize[i] == false)
 
             count+=2; //1 arithmetic, 1 assignment
         }
@@ -127,7 +127,18 @@ public class Q2_RadixSort {
             String word = list[i];
             count+=2; //1 array indexing, 1 assignment
 
-            int charIndex = (maxLength - 1) < word.length() ? word.charAt(maxLength - 1) - 'a' : -1;
+            int charIndex;
+            count+=3; //1 arithmetic, 1 length access, 1 comparison
+            if ((maxLength - 1) < word.length()) 
+            {
+                charIndex = word.charAt(maxLength - 1) - 'a';
+                count+=4; //1 method call, 2 arithmetic, 1 assignment
+            }
+            else
+            {
+                charIndex = -1;
+                count++; //assignment
+            }
 
             count++; //comparison
             if (charIndex >= 0) {
@@ -195,7 +206,7 @@ public class Q2_RadixSort {
                 count+=6; //1 increment, 3 array indexing, 2 assignment
                 count+=2; //1 arithmetic, 1 assignment
             }
-            count+=2; //1 length access, 1 comparison (j < finalBucketSize[i] == false)
+            count+=2; //1 array indexing, 1 comparison (j < finalBucketSize[i] == false)
             count+=2; //1 arithmetic, 1 assignment
         }
         count++; //comparison (i < 26 == false)
