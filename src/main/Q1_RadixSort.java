@@ -17,8 +17,8 @@ public class Q1_RadixSort {
         int max = values[0];
         count += 2; // 1 array indexing, 1 assignment
 
+        count++; // Assignment (i = 0)
         for (int i = 0; i < values.length; i++) {
-            count++; // Assignment (i = 0)
             count += 2; // 1 length access, 1 comparison
 
             int val = values[i];

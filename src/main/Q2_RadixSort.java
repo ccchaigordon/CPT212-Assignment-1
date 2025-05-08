@@ -17,7 +17,7 @@ public class Q2_RadixSort {
         int maxLength = 0;
         count++; // Assignment
 
-        count++; // Assignment (i=0)
+        count++; // Assignment (i = 0)
         for (int i = 0; i < arr.length; i++) {
             count += 2; // 1 length access, 1 comparison
 
