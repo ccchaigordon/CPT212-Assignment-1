@@ -183,7 +183,7 @@ public class Q1_RadixSort {
         System.out.println("\nNumber of primitive operations: " + count + "\n");
         System.out.println("Test cases for different array sizes (n): \n");
 
-         // Initialise the array size for testing
+        // Initialise the array size for testing
         int[] n = { 1, 10, 100, 1000, 10000, 20000, 40000, 60000, 80000, 100000 };
         count = 0;
         for(int i = 0; i < n.length; i++)
