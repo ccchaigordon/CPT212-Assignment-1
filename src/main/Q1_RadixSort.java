@@ -190,7 +190,7 @@ public class Q1_RadixSort {
         {
             int arrSize = n[i];
             int input[] = new int[arrSize];
-            Random rand = new Random();
+            Random rand = new Random(212);
             // Fill the array with random numbers between 0 and 10000
             for (int j = 0; j < arrSize; j++) {
                 input[j] = rand.nextInt(10000);
@@ -200,7 +200,7 @@ public class Q1_RadixSort {
             radixSort(input);
 
             System.out.println("n = " + n[i]);
-            System.out.println("Number of primitive operations: " + count);
+            System.out.println("Number of primitive operations: " + count + "\n");
  
             count = 0; // Reset operation counter for next iteration
         }
