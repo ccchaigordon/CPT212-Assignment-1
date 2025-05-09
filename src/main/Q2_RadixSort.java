@@ -217,16 +217,26 @@ public class Q2_RadixSort {
         {
             int arrSize = n[i];
             String[] input = new String[arrSize];
-            Random rand = new Random(21);
+            Random rand = new Random(212);
             StringBuilder alphaBuilder = new StringBuilder();
             for (char c = 'a'; c <= 'z'; c++) 
                 alphaBuilder.append(c);
             String alphabet = alphaBuilder.toString();
 
+            boolean generatedMaxLength = false;
             // Fill the array with random strings
             for (int j = 0; j < arrSize; j++) 
             {
-                int strLen = rand.nextInt(arrSize) + 1; 
+                int strLen;
+                if (!generatedMaxLength && j == arrSize - 1) {
+                    strLen = 10;
+                    generatedMaxLength = true;
+                } else {
+                    strLen = rand.nextInt(10) + 1;
+                    if (strLen == 10) 
+                        generatedMaxLength = true;
+                }
+
                 StringBuilder sb = new StringBuilder(strLen);
                 for (int k = 0; k < strLen; k++) {
                     sb.append(alphabet.charAt(rand.nextInt(alphabet.length())));
