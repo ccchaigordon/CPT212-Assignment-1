@@ -1,6 +1,7 @@
 package src.main;
 
 import java.util.Arrays;
+import java.util.Random;
 
 public class Q2_RadixSort {
 
@@ -17,7 +18,7 @@ public class Q2_RadixSort {
         int maxLength = 0;
         count++; // Assignment
 
-        count++; // Assignment (i=0)
+        count++; // Assignment (i = 0)
         for (int i = 0; i < arr.length; i++) {
             count += 2; // 1 length access, 1 comparison
 
@@ -206,6 +207,55 @@ public class Q2_RadixSort {
         count++; // Method call
         radixSort(data);
         System.out.println("\nSorted: " + Arrays.toString(data));
-        System.out.println("\nNumber of primitive operations: " + count);
+        System.out.println("\nNumber of primitive operations: " + count + "\n");
+        System.out.println("Test cases for different array sizes (n): \n");
+
+        // Initialise the array size for testing
+        int[] n = { 1, 3, 5, 10, 20, 40, 60, 80, 100 };
+        count = 0;
+        for (int i = 0; i < n.length; i++) 
+        {
+            int arrSize = n[i];
+            String[] input = new String[arrSize];
+            Random rand = new Random(212);
+            StringBuilder alphaBuilder = new StringBuilder();
+            for (char c = 'a'; c <= 'z'; c++) 
+                alphaBuilder.append(c);
+            String alphabet = alphaBuilder.toString();
+
+            boolean generatedMaxLength = false;
+            // Fill the array with random strings
+            for (int j = 0; j < arrSize; j++) 
+            {
+                int strLen;
+                if (!generatedMaxLength && j == arrSize - 1) {
+                    strLen = 10;
+                    generatedMaxLength = true;
+                } else {
+                    strLen = rand.nextInt(10) + 1;
+                    if (strLen == 10) 
+                        generatedMaxLength = true;
+                }
+
+                StringBuilder sb = new StringBuilder(strLen);
+                for (int k = 0; k < strLen; k++) {
+                    sb.append(alphabet.charAt(rand.nextInt(alphabet.length())));
+                }
+                input[j] = sb.toString();
+            }
+            System.out.println("Generated Strings:");
+            for (String s : input) {
+                System.out.print(s + " ");
+            }
+            System.out.println();
+            
+            count++; // Method call
+            radixSort(input);
+
+            System.out.println("n = " + arrSize);
+            System.out.println("Number of primitive operations: " + count + "\n");
+
+            count = 0; // Reset operation counter for next iteration
+        }
     }
 }

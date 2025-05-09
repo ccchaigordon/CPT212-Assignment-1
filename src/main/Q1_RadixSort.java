@@ -1,6 +1,7 @@
 package src.main;
 
 import java.util.Arrays;
+import java.util.Random;
 
 public class Q1_RadixSort {
 
@@ -17,8 +18,8 @@ public class Q1_RadixSort {
         int max = values[0];
         count += 2; // 1 array indexing, 1 assignment
 
+        count++; // Assignment (i = 0)
         for (int i = 0; i < values.length; i++) {
-            count++; // Assignment (i = 0)
             count += 2; // 1 length access, 1 comparison
 
             int val = values[i];
@@ -179,6 +180,29 @@ public class Q1_RadixSort {
         count++; // Method call
         radixSort(data);
         System.out.println("\nSorted: " + Arrays.toString(data));
-        System.out.println("\nNumber of primitive operations: " + count);
+        System.out.println("\nNumber of primitive operations: " + count + "\n");
+        System.out.println("Test cases for different array sizes (n): \n");
+
+        // Initialise the array size for testing
+        int[] n = { 1, 10, 100, 1000, 10000, 20000, 40000, 60000, 80000, 100000 };
+        count = 0;
+        for(int i = 0; i < n.length; i++)
+        {
+            int arrSize = n[i];
+            int input[] = new int[arrSize];
+            Random rand = new Random(212);
+            // Fill the array with random numbers between 0 and 10000
+            for (int j = 0; j < arrSize; j++) {
+                input[j] = rand.nextInt(10000);
+            }
+ 
+            count++; // Method call
+            radixSort(input);
+
+            System.out.println("n = " + n[i]);
+            System.out.println("Number of primitive operations: " + count + "\n");
+ 
+            count = 0; // Reset operation counter for next iteration
+        }
     }
 }
